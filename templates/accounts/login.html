@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Request is attached to all templates thanks to django, in settings.py -->
+{% if not request.user.is_authenticated %}
+<div>
+    <form method="POST">{% csrf_token %}
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <input type="text" name="username" placeholder="Username">
+        <br>
+        <input type="password" name="password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+{% else %}
+<p>You're already logged in. would you like to <a href="/logout/">logout</a>?</p>
+{% endif %}
+
+{% endblock %}

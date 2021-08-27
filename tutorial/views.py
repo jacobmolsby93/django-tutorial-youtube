@@ -13,12 +13,11 @@ def home_view(request, *args, **kwargs):
     Return HTML as a response (We pick to return the reponse)
     """
 
-    
-    article_obj = Article.objects.get()  
-    article_queryset = Article.objects.all()
     random_id = random.randint(1, 4)
     # article_title = article_obj.title
     # article_content = article_obj.content
+    article_obj = Article.objects.get(id=random_id)
+    article_queryset = Article.objects.all()
 
     context = {
         "object_list": article_queryset,

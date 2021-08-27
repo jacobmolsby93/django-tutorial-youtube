@@ -15,14 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from article import views
+
+from accounts.views import (
+    login_view,
+    logout_view,
+)
+from article.views import (
+    article_create_view,
+    article_detail_view,
+    article_search_view,
+)
 from .views import home_view
 
-
+# article/int:id needs to best last, because it has datatype int.
+# otherwise keep in alphabetical order
 urlpatterns = [
     path('', home_view),
-    path('article/', views.article_search_view),
-    path('article/create/', views.article_create_view),
-    path('article/<int:id>/', views.article_detail_view),
+    path('article/', article_search_view),
+    path('article/create/', article_create_view),
+    path('article/<int:id>/', article_detail_view),
     path('admin/', admin.site.urls),
+    path('login/', login_view),
+    path('logout/', logout_view),
 ]
