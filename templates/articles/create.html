@@ -2,13 +2,12 @@
 
 {% block content %}
 {% if not created %}
+
+
     <div style="margin-top: 30px;">
         <form action="." method="POST">
             {% csrf_token %}
-            <input type="text" placeholder="Title" name="title">
-            <br>
-            <textarea name="content" placeholder="Content" cols="30" rows="10"></textarea>
-            <br>
+            {{ form.as_p }}
             <button type="submit">Create Article</button>
         </form>
     </div>
