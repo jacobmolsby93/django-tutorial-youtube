@@ -1,26 +1,16 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.http import Http404
+from django.shortcuts import render, redirect
 
 from .forms import ArticleForm
 from .models import Article
 
 
-# Create your views here.
-
 def article_search_view(request):
-    print(request.GET)
-    query_dict = request.GET # this is a dictionary
-    query = query_dict.get('query') # input type="text" name="query"
-
-    try: 
-        query = int(query_dict.get('query'))
-    except: 
-        query = None
-    article_obj = None
-    if query is not None:
-        article_obj = Article.objects.get(id=query)
+    query = request.GET.get('query') # this is a dictionary
+    qs = Article.objects.search(query=query)
     context = {
-        "object": article_obj # search.html object.title...
+        "object_list": qs # search.html object.title...
     }
     return render(
         request,
@@ -42,8 +32,10 @@ def article_create_view(request):
         # title = form.cleaned_data.get('title')
         # content = form.cleaned_data.get('content') # theese 3 lines not required in modelform
         # article_object = Article.objects.create(title=title, content=content)
-        context['object'] = article_object # Rinses the form when form created
-        context['created'] = True
+        # context['object'] = article_object # Rinses the form when form created
+        # context['created'] = True
+        # return redirect("article-detail", slug=article_object.slug)
+        return redirect(article_object.get_absolute_url())
     return render(
         request,
         "articles/create.html", 
@@ -74,10 +66,17 @@ def article_create_view(request):
 #     )
 
 
-def article_detail_view(request, id=None):
+def article_detail_view(request, slug=None):
     article_obj = None
     if id is not None:
-        article_obj = Article.objects.get(id=id)
+        try:
+            article_obj = Article.objects.get(slug=slug)
+        except Article.DoesNotExist:
+            raise Http404
+        except Article.MultipleObjectsReturned:
+            article_obj = Article.objects.filter(slug=slug).first()
+        except:
+            raise Http404
     context = {
         "object": article_obj,
     }

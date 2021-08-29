@@ -33,8 +33,8 @@ from .views import home_view
 urlpatterns = [
     path('', home_view),
     path('article/', article_search_view),
-    path('article/create/', article_create_view),
-    path('article/<int:id>/', article_detail_view),
+    path('article/create/', article_create_view, name="article-create"),
+    path('article/<slug:slug>/', article_detail_view, name='article-detail'),
     path('admin/', admin.site.urls),
     path('login/', login_view),
     path('logout/', logout_view),
