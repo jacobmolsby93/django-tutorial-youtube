@@ -14,27 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from accounts.views import (
     login_view,
     logout_view,
     register_view,
 )
-from article.views import (
-    article_create_view,
-    article_detail_view,
-    article_search_view,
-)
+
 from .views import home_view
 
-# article/int:id needs to best last, because it has datatype int.
+# int:id needs to be last, because it has datatype int.
 # otherwise keep in alphabetical order
 urlpatterns = [
     path('', home_view),
-    path('article/', article_search_view),
-    path('article/create/', article_create_view, name="article-create"),
-    path('article/<slug:slug>/', article_detail_view, name='article-detail'),
+    path('recipes/', include('recipes.urls')),
+    path('articles/', include('article.urls')),
     path('admin/', admin.site.urls),
     path('login/', login_view),
     path('logout/', logout_view),

@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.db.models import Q
 from django.db.models.signals import pre_save, post_save
@@ -7,6 +8,9 @@ from django.utils import timezone
 # Create your models here.
 
 from .utils import slugify_instance_title
+
+# Best way to set the user model
+User = settings.AUTH_USER_MODEL
 
 class ArticleQuerySet(models.QuerySet):
     def search(self, query=None):
@@ -24,6 +28,7 @@ class ArticleManager(models.Manager):
 
 
 class Article(models.Model):
+    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, null=True, unique=True)
     content = models.TextField()
@@ -37,7 +42,7 @@ class Article(models.Model):
 
     # A dynamic url function instead of hard coding the link in templates
     def get_absolute_url(self):
-        return reverse('article-detail', kwargs={"slug": self.slug})
+        return reverse('article:detail', kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):
         # obj = Article.objects.get(id=1)
