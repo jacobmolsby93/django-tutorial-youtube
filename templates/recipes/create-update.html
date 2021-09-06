@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    .ingredient-form {
+        border-bottom: 1px solid black;
+        margin-bottom: 7px;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+
 {% if message %}
 <p>{{ message }}</p>
 {% endif %}
@@ -13,21 +25,49 @@
             {{ field.errors }}
             {{ field.label }} {{ field }}
             {% if field.help_text %}
-                <p class="help">{{ field.help_text|safe}}</p>
+            <p class="help">{{ field.help_text|safe}}</p>
             {% endif %}
         </div>
-        {% endfor %}
+            {% endfor %}
 
-        {% if formset %}
-        <h3>Ingredients</h3>
-        {{ formset.management_form }}
-        {% for form in formset %}
-            <div class="ingredient-form">
-                {{ form.as_p }}
+            {% if formset %}
+            <h3>Ingredients</h3>
+            {{ formset.management_form }}
+            <div id="ingredient-form-list">
+                {% for form in formset %}
+                <div class="ingredient-form">
+                    {{ form.as_p }}
+                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+
+        <div id="empty-form" class="hidden">
+            {{ formset.empty_form.as_p}}
+        </div>
+        <button id="add-more" type="button">Add Ingredient</button>
         {% endif %}
         <button type="submit">Save</button>
     </form>
 </div>
+
+<script>
+
+    const addMoreBtn = document.getElementById('add-more');
+    addMoreBtn.addEventListener('click', add_new_form)
+
+    function add_new_form(event) {
+        if (event) {
+            event.preventDefault()
+        }
+        // now add new empty form element to our html form
+        const formCopyTarget = document.getElementById('ingredient-form-list')
+        const emptyFormEl = document.getElementById('empty-form').cloneNode(true)
+        emptyFormEl.setAttribute('class', 'ingredient-form')
+        emptyFormEl.setAttribute('id', '')
+        formCopyTarget.append(emptyFormEl)
+    }
+
+</script>
+
+
 {% endblock content %}
