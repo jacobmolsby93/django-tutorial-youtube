@@ -1,0 +1,451 @@
+[
+{
+    "model": "recipes.recipe",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "name": "Lasagna",
+        "description": "pasta dish yum",
+        "directions": "cook in oven q",
+        "timestamp": "2021-08-30T17:07:40.002Z",
+        "updated": "2021-09-06T16:33:20.930Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "name": "Grilled Chicken",
+        "description": "Grilled chicken",
+        "directions": "cook",
+        "timestamp": "2021-08-30T17:27:26.421Z",
+        "updated": "2021-09-06T16:12:14.347Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "name": "beef",
+        "description": "grilled beef tenderloin",
+        "directions": "smack it on the grill",
+        "timestamp": "2021-09-01T16:48:16.221Z",
+        "updated": "2021-09-01T16:48:24.527Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "name": "Chicken Pasta",
+        "description": "Pasta dish with chicken",
+        "directions": "cook chicken and pasta",
+        "timestamp": "2021-09-03T18:06:21.726Z",
+        "updated": "2021-09-03T19:14:12.352Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "name": "pasta HTMX",
+        "description": "new pasta",
+        "directions": "cook pasta",
+        "timestamp": "2021-09-06T16:53:14.586Z",
+        "updated": "2021-09-06T17:20:13.276Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 1,
+    "fields": {
+        "recipe": 2,
+        "name": "Chicken",
+        "description": "",
+        "quantity": "1 1/4",
+        "quantity_as_float": 1.25,
+        "unit": "pounds",
+        "directions": "",
+        "timestamp": "2021-08-30T17:27:26.422Z",
+        "updated": "2021-09-06T16:12:14.383Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 2,
+    "fields": {
+        "recipe": 3,
+        "name": "beef",
+        "description": "medium rare",
+        "quantity": "1 1/2",
+        "quantity_as_float": 1.5,
+        "unit": "pounds",
+        "directions": "cook it hot",
+        "timestamp": "2021-09-01T16:48:16.222Z",
+        "updated": "2021-09-01T16:48:16.222Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 3,
+    "fields": {
+        "recipe": 2,
+        "name": "Onion",
+        "description": "raw onion",
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pounds",
+        "directions": "",
+        "timestamp": "2021-09-03T17:40:19.162Z",
+        "updated": "2021-09-06T16:12:14.411Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 4,
+    "fields": {
+        "recipe": 4,
+        "name": "chicken",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pound",
+        "directions": null,
+        "timestamp": "2021-09-03T18:39:48.504Z",
+        "updated": "2021-09-03T19:14:12.384Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 5,
+    "fields": {
+        "recipe": 4,
+        "name": "pasta",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pound",
+        "directions": null,
+        "timestamp": "2021-09-03T18:40:32.382Z",
+        "updated": "2021-09-03T19:14:12.409Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 6,
+    "fields": {
+        "recipe": 1,
+        "name": "pasta plates",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pounds",
+        "directions": null,
+        "timestamp": "2021-09-06T16:32:20.087Z",
+        "updated": "2021-09-06T16:32:20.087Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 7,
+    "fields": {
+        "recipe": 1,
+        "name": "pasta plates",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pounds",
+        "directions": null,
+        "timestamp": "2021-09-06T16:32:27.431Z",
+        "updated": "2021-09-06T16:32:27.431Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 8,
+    "fields": {
+        "recipe": 1,
+        "name": "",
+        "description": null,
+        "quantity": "",
+        "quantity_as_float": 0.0,
+        "unit": "",
+        "directions": null,
+        "timestamp": "2021-09-06T16:32:27.527Z",
+        "updated": "2021-09-06T16:32:27.527Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 9,
+    "fields": {
+        "recipe": 1,
+        "name": "pasta plates",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pounds",
+        "directions": null,
+        "timestamp": "2021-09-06T16:32:50.965Z",
+        "updated": "2021-09-06T16:32:50.965Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 10,
+    "fields": {
+        "recipe": 1,
+        "name": "",
+        "description": null,
+        "quantity": "",
+        "quantity_as_float": 0.0,
+        "unit": "",
+        "directions": null,
+        "timestamp": "2021-09-06T16:32:50.990Z",
+        "updated": "2021-09-06T16:32:50.990Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 11,
+    "fields": {
+        "recipe": 1,
+        "name": "pasta plates",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pounds",
+        "directions": null,
+        "timestamp": "2021-09-06T16:33:20.956Z",
+        "updated": "2021-09-06T16:33:20.956Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 12,
+    "fields": {
+        "recipe": 1,
+        "name": "tomato sauce",
+        "description": null,
+        "quantity": "500",
+        "quantity_as_float": 500.0,
+        "unit": "grams",
+        "directions": null,
+        "timestamp": "2021-09-06T16:33:20.980Z",
+        "updated": "2021-09-06T16:33:20.980Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 13,
+    "fields": {
+        "recipe": 1,
+        "name": "parmesan cheese",
+        "description": null,
+        "quantity": "50",
+        "quantity_as_float": 50.0,
+        "unit": "gram",
+        "directions": null,
+        "timestamp": "2021-09-06T16:33:21.001Z",
+        "updated": "2021-09-06T16:33:21.001Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 14,
+    "fields": {
+        "recipe": 5,
+        "name": "pasta noodles",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pounds",
+        "directions": null,
+        "timestamp": "2021-09-06T16:53:27.218Z",
+        "updated": "2021-09-06T17:20:13.302Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 15,
+    "fields": {
+        "recipe": 5,
+        "name": "chilli flakes",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:00:39.089Z",
+        "updated": "2021-09-06T17:20:13.326Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 16,
+    "fields": {
+        "recipe": 5,
+        "name": "chilli flakes",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:00:41.402Z",
+        "updated": "2021-09-06T17:20:13.352Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 17,
+    "fields": {
+        "recipe": 5,
+        "name": "chilli flakes",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:00:46.917Z",
+        "updated": "2021-09-06T17:20:13.375Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 18,
+    "fields": {
+        "recipe": 5,
+        "name": "chilli sauce",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "liter",
+        "directions": null,
+        "timestamp": "2021-09-06T17:02:21.346Z",
+        "updated": "2021-09-06T17:20:13.400Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 19,
+    "fields": {
+        "recipe": 5,
+        "name": "chilli sauce",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "liter",
+        "directions": null,
+        "timestamp": "2021-09-06T17:02:24.436Z",
+        "updated": "2021-09-06T17:20:13.423Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 20,
+    "fields": {
+        "recipe": 5,
+        "name": "tacos",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "pound",
+        "directions": null,
+        "timestamp": "2021-09-06T17:17:27.738Z",
+        "updated": "2021-09-06T17:20:13.447Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 21,
+    "fields": {
+        "recipe": 5,
+        "name": "fish",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:19:14.768Z",
+        "updated": "2021-09-06T17:20:13.475Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 22,
+    "fields": {
+        "recipe": 5,
+        "name": "fish",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:19:19.885Z",
+        "updated": "2021-09-06T17:20:13.500Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 23,
+    "fields": {
+        "recipe": 5,
+        "name": "bass",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:20:08.718Z",
+        "updated": "2021-09-06T17:20:08.719Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredients",
+    "pk": 24,
+    "fields": {
+        "recipe": 5,
+        "name": "bass",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kilos",
+        "directions": null,
+        "timestamp": "2021-09-06T17:20:13.525Z",
+        "updated": "2021-09-06T17:20:13.525Z",
+        "active": true
+    }
+}
+]

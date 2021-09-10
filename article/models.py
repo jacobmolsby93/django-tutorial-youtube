@@ -40,6 +40,10 @@ class Article(models.Model):
 
     objects = ArticleManager()
 
+    @property
+    def name(self):
+        return self.title 
+    
     # A dynamic url function instead of hard coding the link in templates
     def get_absolute_url(self):
         return reverse('article:detail', kwargs={"slug": self.slug})

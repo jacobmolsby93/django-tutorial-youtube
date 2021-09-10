@@ -22,6 +22,7 @@ from accounts.views import (
     register_view,
 )
 
+from search.views import search_view
 from .views import home_view
 
 # int:id needs to be last, because it has datatype int.
@@ -30,6 +31,7 @@ urlpatterns = [
     path('', home_view),
     path('recipes/', include('recipes.urls')),
     path('articles/', include('article.urls')),
+    path('search/', search_view, name='search'),
     path('admin/', admin.site.urls),
     path('login/', login_view),
     path('logout/', logout_view),
